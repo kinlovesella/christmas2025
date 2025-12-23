@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Color Palette - Warmer and softer */
+            --primary: #c08497;  /* Dusty Rose */
+            --secondary: #f7ebe8; /* Off-white background */
+            --text-dark: #4a4a4a; /* Soft black text */
+            --text-light: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.8;
+            color: var(--text-dark);
+            background-color: var(--secondary);
+            margin: 0;
+            padding-top: 60px; /* Space for fixed nav */
+        }
+
+        /* Headings Font */
+        h1, h2, h3, .nav-title {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            padding: 1rem 0;
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .nav-title {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section (The big top image) */
+        #hero {
+            /* REPLACE THE IMAGE BELOW with your main couple photo */
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://media.discordapp.net/attachments/1391093718257500191/1442209212787589160/image.jpg?ex=6924997f&is=692347ff&hm=d035587c8d8cfd1c15d9b424fd643c7bd4ddddd36aa7c283bc153a1aff4c556c&=&format=webp&width=1240&height=930'); 
+            background-size: cover;
+            background-position: center 34%;
+            height: 60vh; /* 60% of screen height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 50px;
+        }
+
+        #hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        #hero p {
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        /* Main Layout */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Memory Sections */
+        .memory-section {
+            background: var(--text-light);
+            padding: 40px;
+            margin-bottom: 60px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            scroll-margin-top: 80px; /* Offset for sticky nav when scrolling */
+        }
+
+        .memory-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        /* Alternating layout: Even sections have the image on the right */
+        .memory-section:nth-child(even) .memory-content {
+            flex-direction: row-reverse;
+        }
+
+        .memory-image {
+            flex: 1;
+        }
+
+        .memory-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            object-fit: cover;
+            max-height: 500px;
+        }
+
+        .memory-text {
+            flex: 1;
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--secondary);
+            display: inline-block;
+        }
+        
+        p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: var(--primary);
+            color: white;
+            font-size: 1.1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Smooth Scroll behavior */
+        html { scroll-behavior: smooth; }
+
+        /* Mobile Responsive Styling */
+        @media (max-width: 768px) {
+            .nav-title { font-size: 1.2rem; }
+            .nav-links a { margin-left: 10px; font-size: 0.8rem; }
+            #hero h1 { font-size: 2.5rem; }
+            
+            /* Stack images on top of text on mobile for all sections */
+            .memory-content, .memory-section:nth-child(even) .memory-content {
+                flex-direction: column;
+            }
+            .memory-image img { max-height: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="nav-title">Kin & Ella</div>
+            <div class="nav-links">
+                <a href="#hero">Home</a>
+                <a href="#first-met">How We Met</a>
+                <a href="#adventures">Our Adventures</a>
+                <a href="#future">The Future</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="hero">
+        <h1>Our Journey Together (07/04/2025 - present)</h1>
+        <p>A collection of our favorite memories</p>
+    </header>
+
+    <main>
+
+        <section id="first-met" class="memory-section">
+            <div class="memory-content">
+                <div class="memory-image">
+                    <img src="https://cdn.discordapp.com/attachments/1391093718257500191/1442072755498520717/image.png?ex=69241a69&is=6922c8e9&hm=9f6c2003d2ea5ab1206d1b6132bd85937fbe8eee51f48ea177795f4a53a629aa&" alt="Photo of when we met">
+                </div>
+                <div class="memory-text">
+                    <h2>The Day We Met</h2>
+                    <p>One night. One call. Everything sparked. Eversince that day, I knew you were the person I'd love to live and vibe with for a very very long time.</p>
+                    <p>The weeks following this day was probably the best weeks of my life. I loved making eye contact with you every time we walk past eachother in the halls. The glance and smile you give always fill my stomach with butterflies. </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="adventures" class="memory-section">
+            <div class="memory-content">
+                <div class="memory-image">
+                    <img src="https://media.discordapp.net/attachments/1391093718257500191/1442208515702915102/IMG_0121.jpg?ex=692498d9&is=69234759&hm=9a1887a4f9601c443285ebc1c0b29c7981af0770375d093d6730784005608617&=&format=webp&width=600&height=800" alt="Photo of our adventures">
+                </div>
+                <div class="memory-text">
+                    <h2>Our Best Moments</h2>
+                    <p>Talk about a trip you took, a concert you went to, or just a really fun weekend. Describe the memory and why it means so much to the both of you.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="memory-section">
+            <div class="memory-content">
+                <div class="memory-image">
+                    <img src="https://picsum.photos/id/1040/600/400" alt="New Adventure Photo 1">
+                </div>
+                <div class="memory-text">
+                    <h2>[Adventure Title 2]</h2>
+                    <p>Write about another specific memory here. Maybe a date night, a movie you saw, or a funny moment.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="memory-section">
+            <div class="memory-content">
+                <div class="memory-image">
+                    <img src="https://picsum.photos/id/1015/600/400" alt="New Adventure Photo 2">
+                </div>
+                <div class="memory-text">
+                    <h2>[Adventure Title 3]</h2>
+                    <p>Write about another memory here. Keep adding details to build your story.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="memory-section">
+            <div class="memory-content">
+                <div class="memory-image">
+                    <img src="https://picsum.photos/id/1067/600/400" alt="New Adventure Photo 3">
+                </div>
+                <div class="memory-text">
+                    <h2>[Adventure Title 4]</h2>
+                    <p>This is the last new adventure section. You can describe your most recent trip or date here.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="future" class="memory-section">
+            <div class="memory-content">
+                <div class="memory-image">
+                    <img src="https://picsum.photos/id/1027/600/400" alt="Photo looking forward">
+                </div>
+                <div class="memory-text">
+                    <h2>Looking Forward</h2>
+                    <p>Wrap up with thoughts about where you are now and where you are going. Write a little note about how much you appreciate her.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Made with love for Ella</p>
+    </footer>
+
+</body>
+</html>
